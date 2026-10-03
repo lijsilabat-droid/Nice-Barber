@@ -2,8 +2,16 @@
 
 @section('title', 'Book an Appointment - Nice Barber')
 
+@section('extra-css')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/booking.css') }}">
+@endsection
+
 @section('content')
-    <!-- Hero Section -->
+<main id="booking-page">
+<!-- Hero Section -->
     <section class="py-12 px-4 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold mb-2">Book Your Appointment</h1>
@@ -228,6 +236,7 @@
             </div>
         </div>
     </section>
+</main>
 @endsection
 
 @section('extra-js')

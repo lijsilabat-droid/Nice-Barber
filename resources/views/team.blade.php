@@ -3,6 +3,7 @@
 @section('title', 'Our Team - Nice Barber')
 
 @section('content')
+<main id="team-page">
     <!-- Hero Section -->
     <section class="py-12 px-4 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto">
@@ -189,4 +190,5 @@
             </a>
         </div>
     </section>
+</main>
 @endsection
