@@ -1,6 +1,32 @@
 @extends('layouts.app')
 
-@section('title', 'Nice Barber | Precision Grooming in Bahir Dar')
+@section('title', 'Nice Barber Bahir Dar | Professional Barber Shop')
+@section('seo')
+<meta name="description" content="Nice Barber is a professional barber shop in Bahir Dar, offering haircuts and beard grooming by professional barbers. Book an appointment online.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nice-barber.onrender.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nice Barber">
+<meta property="og:title" content="Nice Barber Bahir Dar | Professional Barber Shop">
+<meta property="og:description" content="Nice Barber is a professional barber shop in Bahir Dar, offering haircuts and beard grooming by professional barbers. Book an appointment online.">
+<meta property="og:url" content="https://nice-barber.onrender.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nice Barber Bahir Dar | Professional Barber Shop">
+<meta name="twitter:description" content="Nice Barber is a professional barber shop in Bahir Dar, offering haircuts and beard grooming by professional barbers. Book an appointment online.">
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Nice Barber",
+    "url": "https://nice-barber.onrender.com/",
+    "description": "Nice Barber is a professional barber shop in Bahir Dar, offering haircuts and beard grooming by professional barbers. Book an appointment online.",
+    "areaServed": {
+        "@type": "City",
+        "name": "Bahir Dar"
+    }
+}
+</script>
+@endsection
 
 @section('extra-css')
 <link rel="preconnect" href="https://fonts.googleapis.com">
