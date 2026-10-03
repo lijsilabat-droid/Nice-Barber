@@ -2,7 +2,7 @@
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale-1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nice Barber</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -345,6 +345,7 @@
     </style>
     
     @yield('extra-css')
+    <link rel="stylesheet" href="{{ asset('css/interior-pages.css') }}">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -386,7 +387,8 @@
                 <a href="{{ route('services') }}" class="block py-2 text-black hover:text-gray-600">Services</a>
                 <a href="{{ route('team') }}" class="block py-2 text-black hover:text-gray-600">Team</a>
                 <a href="{{ route('contact') }}" class="block py-2 text-black hover:text-gray-600">Contact</a>
-                <a href="{{ route('booking.form') }}" class="block py-2 text-black font-bold">📅 Book Appointment</a>
+                <a href="tel:0918289788" class="block py-2 text-black">Call Us: 0918289788</a>
+                <a href="{{ route('booking.form') }}" class="block py-2 text-black font-bold">Book Now</a>
             </div>
         </div>
     </nav>
