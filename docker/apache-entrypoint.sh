@@ -1,5 +1,15 @@
 #!/bin/sh
 set -eu
+# Render may recreate runtime directories after the image is built.
+# Reassert writable permissions for Laravel and Apache at container startup.
+mkdir -p \
+    /var/www/html/storage/framework/cache/data \
+    /var/www/html/storage/framework/sessions \
+    /var/www/html/storage/framework/views \
+    /var/www/html/storage/logs \
+    /var/www/html/bootstrap/cache
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+chmod -R ug+rwX /var/www/html/storage /var/www/html/bootstrap/cache
 
 if [ "${APP_ENV:-production}" = "production" ] && [ -z "${APP_KEY:-}" ]; then
     echo "ERROR: APP_KEY is required in production. Set it as a Render secret (do not put it in the image)." >&2

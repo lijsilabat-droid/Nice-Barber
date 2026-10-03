@@ -6,7 +6,8 @@ ENV APP_ENV=production \
     DB_CONNECTION=sqlite \
     DB_DATABASE=/var/data/database.sqlite \
     CACHE_STORE=file \
-    SESSION_DRIVER=file
+    SESSION_DRIVER=file \
+    LOG_CHANNEL=stderr
 
 # Install Laravel's required PHP extensions and SQLite/MySQL PDO drivers.
 RUN apt-get update && apt-get install -y --no-install-recommends \
