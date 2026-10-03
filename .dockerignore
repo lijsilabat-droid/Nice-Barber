@@ -9,6 +9,8 @@
 **/auth.json
 .npmrc
 vendor
+database/*.sqlite
+database/*.sqlite-*
 node_modules
 storage/logs/*.log
 storage/framework/views/*

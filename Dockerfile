@@ -1,5 +1,13 @@
 FROM php:8.3-apache
 
+# Safe production defaults; Render dashboard values can override these.
+ENV APP_ENV=production \
+    APP_DEBUG=false \
+    DB_CONNECTION=sqlite \
+    DB_DATABASE=/var/data/database.sqlite \
+    CACHE_STORE=file \
+    SESSION_DRIVER=file
+
 # Install Laravel's required PHP extensions and SQLite/MySQL PDO drivers.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
@@ -35,6 +43,7 @@ RUN sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-availabl
     && printf '<Directory /var/www/html/public>\n    AllowOverride All\n    Require all granted\n</Directory>\n' > /etc/apache2/conf-available/laravel-public.conf \
     && a2enconf laravel-public \
     && a2enmod rewrite \
+    && mkdir -p /var/www/html/storage/framework/cache/data /var/www/html/storage/framework/sessions /var/www/html/storage/framework/views /var/www/html/storage/logs /var/data \
     && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 COPY docker/apache-entrypoint.sh /usr/local/bin/apache-entrypoint
