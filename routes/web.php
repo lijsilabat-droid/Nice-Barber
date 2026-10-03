@@ -19,6 +19,7 @@ Route::get('/', [BarberController::class, 'index'])->name('home');
 Route::get('/services', [BarberController::class, 'services'])->name('services');
 Route::get('/team', [BarberController::class, 'team'])->name('team');
 Route::get('/contact', [BarberController::class, 'contact'])->name('contact');
+Route::get('/sitemap.xml', fn () => response()->view('sitemap', [], 200, ['Content-Type' => 'application/xml; charset=UTF-8']))->name('sitemap');
 
 // Booking routes
 Route::get('/booking', [BarberController::class, 'showBookingForm'])->name('booking.form');
